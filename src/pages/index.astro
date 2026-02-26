@@ -1,327 +1,129 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const experience = [
-  {
-    role: "International Relations Analyst",
-    org: "European Central Bank",
-    location: "Frankfurt, Germany",
-    period: "Sep 2024 – Jan 2026",
-    bullets: [
-      "Monitored EU economic, political, and legislative developments; produced concise background notes under tight deadlines circulated to ECB Board Member",
-      "Coordinated targeted briefing material for senior management in preparation for external engagements with institutional stakeholders",
-      "Assisted in the preparations for legislative discussions on the digital euro with the European Parliament",
-      "Co-authored a forthcoming Working Paper and an Economic Bulletin Box, contributing across all research stages (design, analysis, visualisation, drafting)",
-      "Developed a Power BI dashboard to track key data for institutional engagements with European counterparts",
-      "Co-organised a seminar series on European economic policy issues",
-    ],
-  },
-  {
-    role: "Economic Analysis Intern",
-    org: "OECD — Centre for Entrepreneurship",
-    location: "Paris, France",
-    period: "May – Aug 2024",
-    bullets: [
-      "Wrote a literature review on the drivers of regional growth, covering the role of skills and mobility, industrial structure, market openness, and infrastructure",
-      "Assisted in the organisation of academic workshops on regional economic growth",
-    ],
-  },
-  {
-    role: "Researcher",
-    org: "Open Data Watch",
-    location: "Remote",
-    period: "May – Aug 2023",
-    bullets: [
-      "Evaluated National Statistics Offices' open data practices for the 2022 Open Data Inventory and 2023 Open Data Gender Index through assessment of 65 statistical indicators",
-    ],
-  },
-];
-
-const education = [
-  {
-    degree: "Master in International Economic Policy",
-    school: "Sciences Po Paris",
-    location: "Paris, France",
-    period: "2023 – Present",
-  },
-  {
-    degree: "Bachelor of Arts and Sciences",
-    school: "University College London",
-    location: "London, United Kingdom",
-    period: "2020 – 2023",
-  },
-];
-
-const base = import.meta.env.BASE_URL;
-
-const skills = [
-  {
-    category: "Programming",
-    items: ["Python", "R", "SQL", "Stata"],
-  },
-  {
-    category: "Data & Visualisation",
-    items: ["Power BI", "Tableau", "Microsoft Excel"],
-  },
-  {
-    category: "Languages",
-    items: ["German — Native", "English — Fluent", "French — Fluent"],
-  },
-];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="Niklas Jütting">
-
-  <!-- ── Navigation ── -->
-  <nav>
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">NJ</a>
-      <ul class="nav-links">
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li>
-          <a href="mailto:jutting.n@gmail.com" class="nav-contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
   <main>
-
-    <!-- ── Hero ── -->
     <section class="hero">
       <div class="container hero-grid">
+
+        <div class="hero-photo-wrap">
+          <img src={`${base}/photo.jpg`} alt="Niklas Jütting" class="hero-photo" />
+        </div>
+
         <div class="hero-text">
-          <p class="hero-eyebrow">Hello, I'm</p>
-          <h1>Niklas<br />Jütting</h1>
-          <p class="hero-subtitle">International Economic Policy</p>
-          <p class="hero-bio">
-            Trilingual analyst with experience at the European Central Bank
-            and the OECD. I work at the intersection of EU economic governance,
-            quantitative research, and institutional policy — currently
-            completing a Master's at Sciences Po Paris.
-          </p>
+          <h1>Niklas Jütting</h1>
+          <p class="hero-subtitle">International Economic Policy · Paris</p>
+
+          <div class="bio">
+            <p>
+              I'm an economist and analyst interested in how geopolitical forces shape
+              macroeconomic outcomes. My research sits at the intersection of
+              international trade, economic security, and the politics of globalisation —
+              in particular, how great-power competition and shifting alliances are
+              redrawing the map of global economic integration.
+            </p>
+            <p>
+              I'm currently completing a Master's in International Economic Policy at
+              Sciences Po Paris. Before that I studied at University College London, and
+              I've had the opportunity to work at the <strong>European Central Bank</strong> and
+              the <strong>OECD</strong>, where I got hands-on experience in policy analysis,
+              institutional briefing, and applied research.
+            </p>
+            <p>
+              I'm particularly drawn to questions about trade fragmentation,
+              geoeconomic risk, and the long-run consequences of economic decoupling —
+              topics that feel increasingly urgent but are still underexplored in the
+              academic literature.
+            </p>
+          </div>
+
           <div class="hero-links">
             <a href="mailto:jutting.n@gmail.com" class="hero-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
               </svg>
               jutting.n@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/niklas-jutting" target="_blank" rel="noopener noreferrer" class="hero-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <a href="https://www.linkedin.com/in/niklas-jutting-676147225/" target="_blank" rel="noopener noreferrer" class="hero-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
               </svg>
               LinkedIn
             </a>
-            <a href={`${base}cv.pdf`} download class="btn-cv">
-              Download CV
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
-              </svg>
-            </a>
           </div>
         </div>
-        <div class="hero-photo-wrap">
-          <img src={`${base}photo.jpg`} alt="Niklas Jütting" class="hero-photo" />
-        </div>
+
       </div>
     </section>
-
-    <!-- ── Experience ── -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-          {experience.map((entry) => (
-            <div class="timeline-entry">
-              <div class="timeline-header">
-                <div>
-                  <p class="entry-role">{entry.role}</p>
-                  <p class="entry-org">
-                    <span class="org-name">{entry.org}</span>
-                    <span class="entry-location"> · {entry.location}</span>
-                  </p>
-                </div>
-                <span class="entry-period">{entry.period}</span>
-              </div>
-              <ul class="entry-bullets">
-                {entry.bullets.map((b) => (
-                  <li>{b}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Education ── -->
-    <section id="education" class="section">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="edu-list">
-          {education.map((entry) => (
-            <div class="edu-entry">
-              <div>
-                <p class="entry-role">{entry.degree}</p>
-                <p class="entry-org">
-                  <span class="org-name">{entry.school}</span>
-                  <span class="entry-location"> · {entry.location}</span>
-                </p>
-              </div>
-              <span class="entry-period">{entry.period}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Skills ── -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-          {skills.map((group) => (
-            <div class="skill-group">
-              <p class="skill-category">{group.category}</p>
-              <div class="skill-tags">
-                {group.items.map((item) => (
-                  <span class="tag">{item}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
   </main>
-
-  <!-- ── Footer ── -->
-  <footer>
-    <div class="container footer-inner">
-      <span>© {new Date().getFullYear()} Niklas Jütting</span>
-      <a href="mailto:jutting.n@gmail.com">jutting.n@gmail.com</a>
-    </div>
-  </footer>
-
 </Layout>
 
 <style>
-  /* ── Nav ── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(249, 248, 245, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    height: var(--nav-height);
-  }
-
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-  }
-
-  .nav-logo {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-    border: 1.5px solid var(--accent);
-    border-radius: 4px;
-    padding: 0.2rem 0.5rem;
-    transition: background 0.15s, color 0.15s;
-  }
-
-  .nav-logo:hover {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .nav-links a {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    transition: color 0.15s;
-  }
-
-  .nav-links a:hover {
-    color: var(--text);
-  }
-
-  .nav-contact {
-    color: var(--accent) !important;
-  }
-
-  .nav-contact:hover {
-    color: var(--accent-hover) !important;
-  }
-
-  /* ── Hero ── */
   .hero {
-    padding: 5rem 0 4rem;
-    border-bottom: 1px solid var(--border);
+    padding: 5rem 0;
   }
 
   .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 260px;
+    grid-template-columns: 220px 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
   }
 
-  .hero-eyebrow {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
+  .hero-photo-wrap {
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: block;
   }
 
   h1 {
-    font-size: clamp(2.75rem, 6vw, 4rem);
+    font-size: 1.75rem;
     font-weight: 600;
-    line-height: 1.08;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     color: var(--text);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.35rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.875rem;
     color: var(--accent);
-    letter-spacing: 0.01em;
-    margin-bottom: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.75rem;
   }
 
-  .hero-bio {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.75;
-    max-width: 520px;
+  .bio {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     margin-bottom: 2rem;
+  }
+
+  .bio p {
+    font-size: 0.975rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .bio strong {
+    color: var(--text);
+    font-weight: 500;
   }
 
   .hero-links {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 
   .hero-link {
@@ -335,252 +137,26 @@ const skills = [
   }
 
   .hero-link:hover {
-    color: var(--text);
-  }
-
-  .btn-cv {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--white);
-    background: var(--accent);
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    transition: background 0.15s;
-  }
-
-  .btn-cv:hover {
-    background: var(--accent-hover);
-  }
-
-  .hero-photo-wrap {
-    display: flex;
-    justify-content: center;
-  }
-
-  .hero-photo {
-    width: 240px;
-    height: 280px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 12px;
-    filter: grayscale(8%);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  }
-
-  /* ── Sections ── */
-  .section {
-    padding: 4rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-title {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-  }
-
-  /* ── Timeline (Experience) ── */
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-  .timeline-entry {
-    padding-left: 1.25rem;
-    border-left: 2px solid var(--border);
-    transition: border-color 0.2s;
-  }
-
-  .timeline-entry:hover {
-    border-left-color: var(--accent);
-  }
-
-  .timeline-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .entry-role {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-  }
-
-  .entry-org {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-  }
-
-  .org-name {
     color: var(--accent);
-    font-weight: 500;
   }
 
-  .entry-location {
-    color: var(--text-muted);
-  }
-
-  .entry-period {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    white-space: nowrap;
-    padding: 0.2rem 0.6rem;
-    background: var(--tag-bg);
-    border-radius: 4px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .entry-bullets {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .entry-bullets li {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    padding-left: 1rem;
-    position: relative;
-    line-height: 1.65;
-  }
-
-  .entry-bullets li::before {
-    content: '–';
-    position: absolute;
-    left: 0;
-    color: var(--border);
-  }
-
-  /* ── Education ── */
-  .edu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .edu-entry {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
-    flex-wrap: wrap;
-  }
-
-  .edu-entry:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  /* ── Skills ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .skill-category {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.875rem;
-  }
-
-  .skill-tags {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .tag {
-    display: inline-block;
-    font-size: 0.875rem;
-    color: var(--text);
-    background: var(--tag-bg);
-    border-radius: 5px;
-    padding: 0.3rem 0.7rem;
-    font-weight: 400;
-    width: fit-content;
-  }
-
-  /* ── Footer ── */
-  footer {
-    padding: 2rem 0;
-  }
-
-  .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-  }
-
-  .footer-inner a:hover {
-    color: var(--text);
-  }
-
-  /* ── Responsive ── */
-  @media (max-width: 768px) {
+  @media (max-width: 680px) {
     .hero-grid {
       grid-template-columns: 1fr;
-      gap: 2.5rem;
+      gap: 2rem;
     }
 
     .hero-photo-wrap {
-      order: -1;
-      justify-content: flex-start;
+      position: static;
+      max-width: 140px;
     }
 
     .hero-photo {
-      width: 120px;
-      height: 140px;
       border-radius: 50%;
     }
 
     .hero {
-      padding: 3rem 0 3rem;
-    }
-
-    .skills-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .nav-links {
-      gap: 1.25rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .nav-links li:not(:last-child) {
-      display: none;
-    }
-
-    .timeline-header {
-      flex-direction: column;
-      gap: 0.5rem;
+      padding: 3rem 0;
     }
   }
 </style>

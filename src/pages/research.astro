@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Research — Niklas Jütting" description="Research by Niklas Jütting on geoeconomics, trade, and international economic policy.">
+  <main>
+    <div class="container page-content">
+
+      <h1 class="page-title">Research</h1>
+
+      <section class="research-section">
+        <h2 class="section-heading">Master's Thesis</h2>
+        <ul class="paper-list">
+          <li class="paper-entry">
+            <p>
+              Jütting, N., 2026,
+              <a href={`${base}/thesis.pdf`} target="_blank" class="paper-link">
+                Geoeconomic Risk Exposure and the Reorientation of Trade Flows
+              </a>.
+              Master Thesis in International Economic Policy, Sciences Po Paris.
+              <a href={`${base}/thesis.pdf`} target="_blank" class="pdf-badge">PDF</a>
+            </p>
+            <p class="paper-abstract">
+              This thesis examines how geoeconomic risk — the exposure of countries and
+              firms to strategic disruptions arising from geopolitical tensions — affects
+              the structure of international trade. Drawing on a combination of
+              gravity modelling and novel measures of bilateral geopolitical alignment,
+              it documents patterns of trade reorientation in response to rising
+              great-power competition and assesses the macroeconomic implications of
+              economic decoupling.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="research-section">
+        <h2 class="section-heading">Work in Progress</h2>
+        <ul class="paper-list">
+          <li class="paper-entry">
+            <p>
+              Jütting, N., forthcoming,
+              <span class="paper-title-plain">
+                EU Institutional Engagement and the Digital Euro: Evidence from
+                Legislative Deliberations
+              </span>.
+              Co-authored working paper, European Central Bank.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 4rem 0;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .research-section {
+    margin-bottom: 3rem;
+  }
+
+  .section-heading {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .paper-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .paper-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .paper-entry:last-child {
+    border-bottom: none;
+  }
+
+  .paper-entry > p:first-child {
+    font-size: 0.975rem;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .paper-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.15s;
+  }
+
+  .paper-link:hover {
+    text-decoration-color: var(--accent);
+  }
+
+  .paper-title-plain {
+    font-style: italic;
+    color: var(--text);
+  }
+
+  .pdf-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background: #EEF2FF;
+    border: 1px solid #C7D2FE;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    transition: background 0.15s;
+  }
+
+  .pdf-badge:hover {
+    background: #E0E7FF;
+  }
+
+  .paper-abstract {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 680px;
+  }
+</style>

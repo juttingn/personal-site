@@ -1,4 +1,6 @@
 ---
+import Nav from '../components/Nav.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -13,7 +15,7 @@ const { title, description = "Niklas Jütting — International Economic Policy"
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +25,14 @@ const { title, description = "Niklas Jütting — International Economic Policy"
     <title>{title}</title>
   </head>
   <body>
+    <Nav />
     <slot />
+    <footer>
+      <div class="container footer-inner">
+        <span>© {new Date().getFullYear()} Niklas Jütting</span>
+        <a href="mailto:jutting.n@gmail.com">jutting.n@gmail.com</a>
+      </div>
+    </footer>
   </body>
 </html>
 
@@ -43,7 +52,7 @@ const { title, description = "Niklas Jütting — International Economic Policy"
     --accent-hover: #1234A8;
     --border: #E4E3DD;
     --tag-bg: #EEEDE8;
-    --nav-height: 64px;
+    --nav-height: 60px;
   }
 
   html {
@@ -57,6 +66,13 @@ const { title, description = "Niklas Jütting — International Economic Policy"
     line-height: 1.65;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
   }
 
   a {
@@ -69,9 +85,27 @@ const { title, description = "Niklas Jütting — International Economic Policy"
   }
 
   .container {
-    max-width: 880px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 0 2rem;
+  }
+
+  footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .footer-inner a:hover {
+    color: var(--text);
   }
 
   @media (max-width: 640px) {

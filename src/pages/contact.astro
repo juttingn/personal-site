@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact — Niklas Jütting">
+  <main>
+    <div class="container page-content">
+      <h1 class="page-title">Contact</h1>
+
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:jutting.n@gmail.com" class="contact-value link">
+            jutting.n@gmail.com
+          </a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <a
+            href="https://www.linkedin.com/in/niklas-jutting-676147225/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-value link"
+          >
+            niklas-jutting-676147225
+          </a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Paris, France</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .page-content {
+    padding: 4rem 0;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: baseline;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border);
+    gap: 1.5rem;
+  }
+
+  .contact-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .contact-value {
+    font-size: 0.975rem;
+    color: var(--text);
+  }
+
+  .link {
+    color: var(--accent);
+    transition: color 0.15s;
+  }
+
+  .link:hover {
+    color: var(--accent-hover);
+  }
+</style>
