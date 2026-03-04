@@ -9,6 +9,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
       <h1 class="page-title">Research</h1>
 
+      <p class="github-note">
+        For replication code and data, see my
+        <a href="https://github.com/juttingn" target="_blank" rel="noopener noreferrer" class="paper-link">GitHub page</a>.
+      </p>
+
       <section class="research-section">
         <h2 class="section-heading">Master's Thesis</h2>
         <ul class="paper-list">
@@ -16,7 +21,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <p>
               Jütting, N., 2026,
               <a href={`${base}/thesis.pdf`} target="_blank" class="paper-link">
-                Geoeconomic Risk Exposure and the Reorientation of Trade Flows
+                Geoeconomic Risk Exposure and Investments: EU firms' response to Russia's invasion of Ukraine
               </a>.
               Master Thesis in International Economic Policy, Sciences Po Paris.
               <a href={`${base}/thesis.pdf`} target="_blank" class="pdf-badge">PDF</a>
@@ -29,6 +34,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               it documents patterns of trade reorientation in response to rising
               great-power competition and assesses the macroeconomic implications of
               economic decoupling.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="research-section">
+        <h2 class="section-heading">Policy Work</h2>
+        <ul class="paper-list">
+          <li class="paper-entry">
+            <p>
+              Dreher, F., Jütting, N., and Schölermann, H., 2025,
+              <a href="https://www.ecb.europa.eu/press/economic-bulletin/focus/2025/html/ecb.ebbox202507_08~8bb10dd42d.en.html" target="_blank" rel="noopener noreferrer" class="paper-link">
+                Hitting record highs: unpacking support for the euro
+              </a>.
+              ECB Economic Bulletin, Issue 7/2025.
             </p>
           </li>
         </ul>
@@ -57,6 +77,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <style>
   .page-content {
     padding: 4rem 0;
+  }
+
+  .github-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
   }
 
   .page-title {
